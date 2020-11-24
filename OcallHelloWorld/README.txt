@@ -1,0 +1,8 @@
+在Enclave中调用应用程序中的不可信函数，打印Hello World
+
+修改文件：
+- Enclave.edl：添加接口ecall_print_helloworld和ocall_print_helloworld
+- Enclave.cpp：添加可信函数ecall_print_helloworld
+- App.cpp：删除ocall_print_string，添加ocall_print_helloworld，在main函数调用ecall_print_helloworld
+- App.h：删除与Edger8rSyntax和TrustedLibrary相关的函数声明
+- Makefile：修改App_Cpp_Files、Enclave_Cpp_Files
